@@ -14,6 +14,7 @@ const (
 	htmlpath   = "views/index.html"
 	staticpath = "views/static/"
 	content    = "content.json"
+	cvpath     = "cv.pdf"
 )
 
 func site(c echo.Context) error {
@@ -25,6 +26,9 @@ func main() {
 	e := echo.New()
 	e.Static("static", staticpath)
 	e.GET("/", site)
+	e.GET("/cv", func(c echo.Context) error {
+		return c.Attachment(cvpath, cvpath)
+	})
 	e.Logger.Fatal(e.Start(":6060"))
 }
 
