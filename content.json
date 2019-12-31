@@ -1,0 +1,42 @@
+{
+    "title": "Ehsan Mahmoudi",
+    "keywords": ["Ehsan Mahmoudi", "golang", "developer", "backend developer", "python"],
+    "description": "Ehsan Mahmoudi personal webpage",
+    "head": "Ehsan Mahmoudi",
+    "intro": "Software Engineer <a href=\"/cv\" target=\"_blank\">DOWNLOAD MY CV</a>",
+    "address": "Iran, Tehran, Azadi st, Roodaki st",
+    "call": "(98) 912 507 5911",
+    "email": "info@e-mahmoudi.me",
+    "slogan": "",
+    "projects": [
+        {
+            "title": "navaak",
+            "description": "music player application"
+        },
+        {
+            "title": "BAB",
+            "description": "shop maker"
+        },
+        {
+            "title": "Argus",
+            "description": "network monitoring"
+        },
+        {
+            "title": "Topology",
+            "description": "network topology"
+        },
+        {
+            "title": "Tracking",
+            "description": "GPS devices tracking view on map"
+        },
+        {
+            "title": "DTA",
+            "description": "Drive test analyze"
+        },
+        {
+            "title": "mogo",
+            "description": "Golang mongo db ODM"
+        }
+    ]
+
+}

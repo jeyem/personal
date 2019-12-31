@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"io/ioutil"
+	"os"
 
 	"github.com/flosch/pongo2"
 	"github.com/labstack/echo"
@@ -29,7 +30,11 @@ func main() {
 	e.GET("/cv", func(c echo.Context) error {
 		return c.Attachment(cvpath, cvpath)
 	})
-	e.Logger.Fatal(e.Start(":6060"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	e.Logger.Fatal(e.Start(":" + port))
 }
 
 func parsehtml() string {
