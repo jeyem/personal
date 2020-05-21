@@ -73,58 +73,6 @@
 		</div>
 	    </div>
 	</header>
-        {% if bios %}
-	<main role="main" id="fh5co-main">
-	    <div class="container" id="bio-animate">
-		<div class="row row-padded">
-		    <div class="col-md-3">
-			<h2 class="fh5co-section-heading to-animate">Biography<span class="fh5co-border"></span></h2>
-		    </div>
-		    <div class="col-md-8 col-md-push-1">
-			<div class="row">
-                            {% for bio in bios %}
-			    <div class="col-md-6 to-animate">
-                                {% for p in bio %}
-                                {{p |safe}}
-                                {% endfor %}
-			    </div>
-                            {% endfor %}
-			    <div class="col-md-6 to-animate">
-			    </div>
-			</div>
-		    </div>
-		</div>
-		<!-- END .row -->
-	    </div>
-	    <!-- END .container -->
-            {% endif %}
-	    <div class="container" id="services-animate">
-		<div class="row row-padded">
-		    <div class="col-md-3">
-			<h2 class="fh5co-section-heading to-animate">Projects<span class="fh5co-border"></span></h2>
-			<p class="to-animate">{{projects_description}}</p>
-		    </div>
-		    <div class="col-md-8 col-md-push-1">
-			<div class="row">
-                            {% for project in projects %}
-			    <div class="col-md-12">
-				<div class="fh5co-accordion-wrap">
-				    <div class="fh5co-accordion to-animate">
-					<div class="fh5co-accordion-head">
-					    <a href="#" class="fh5co-accordion-toggle js-fh5co-accordion-toggle">Show More</a>
-					    <h3>{{project.title |safe}}</h3>
-					</div>
-					<div class="fh5co-accordion-body active">
-					    <p>{{project.description |safe}}</p>
-					</div>
-				    </div>
-				</div>
-			    </div>
-                            {% endfor %}
-			</div>
-		    </div>
-		</div>
-		<!-- END .row -->
 
 	    </div>
 	    <!-- END .container -->

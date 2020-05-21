@@ -2,14 +2,17 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"io/ioutil"
-	"os"
 
 	"github.com/flosch/pongo2"
 	"github.com/labstack/echo"
 )
 
-var html string
+var (
+	html string
+	port = flag.String("p", ":8000", "port flag")
+)
 
 const (
 	htmlpath   = "views/index.html"
@@ -23,6 +26,7 @@ func site(c echo.Context) error {
 }
 
 func main() {
+	flag.Parse()
 	html = parsehtml()
 	e := echo.New()
 	e.Static("static", staticpath)
@@ -30,11 +34,7 @@ func main() {
 	e.GET("/cv", func(c echo.Context) error {
 		return c.Attachment(cvpath, cvpath)
 	})
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-	e.Logger.Fatal(e.Start(":" + port))
+	e.Logger.Fatal(e.Start(*port))
 }
 
 func parsehtml() string {
